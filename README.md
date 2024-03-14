@@ -1,3 +1,8 @@
+## Resource
+- OpenSearch
+- Bedrock
+- IAM
+
 ## Env
 ```bash
 python3.10 -m virtualenv venv
