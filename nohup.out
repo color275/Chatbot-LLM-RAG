@@ -1,0 +1,449 @@
+
+Collecting usage statistics. To deactivate, set browser.gatherUsageStats to False.
+
+
+  You can now view your Streamlit app in your browser.
+
+  Network URL: http://10.10.101.168:8501
+  External URL: http://3.35.137.48:8501
+
+2024-03-14 13:24:16,396 - botocore.credentials - INFO - Found credentials from IAM Role: chiholee-ec2-role
+
+Collecting usage statistics. To deactivate, set browser.gatherUsageStats to False.
+
+
+  You can now view your Streamlit app in your browser.
+
+  Network URL: http://10.10.101.168:8501
+  External URL: http://3.35.137.48:8501
+
+2024-03-14 13:24:57,036 - botocore.credentials - INFO - Found credentials from IAM Role: chiholee-ec2-role
+2024-03-14 13:24:57,149 - botocore.credentials - INFO - Found credentials from IAM Role: chiholee-ec2-role
+2024-03-14 13:24:57,243 - root - INFO - Starting the chain with KNN similarity using OpenSearch, Bedrock FM anthropic.claude-3-sonnet-20240229-v1:0, and Bedrock embeddings with amazon.titan-embed-text-v1
+/home/ec2-user/Chatbot-LLM-RAG/venv/lib/python3.10/site-packages/langchain_core/_api/deprecation.py:117: LangChainDeprecationWarning: The function `__call__` was deprecated in LangChain 0.1.0 and will be removed in 0.2.0. Use invoke instead.
+  warn_deprecated(
+2024-03-14 13:24:57,988 - opensearch - INFO - POST https://vpc-test-aponilxfo5qn2nfe6mitxf2rxu.ap-northeast-2.es.amazonaws.com:443/llm/_search [status:200 request:0.037s]
+2024-03-14 13:25:37,168 - botocore.credentials - INFO - Found credentials from IAM Role: chiholee-ec2-role
+2024-03-14 13:25:37,262 - root - INFO - Starting the chain with KNN similarity using OpenSearch, Bedrock FM anthropic.claude-3-sonnet-20240229-v1:0, and Bedrock embeddings with amazon.titan-embed-text-v1
+2024-03-14 13:25:37,904 - opensearch - INFO - POST https://vpc-test-aponilxfo5qn2nfe6mitxf2rxu.ap-northeast-2.es.amazonaws.com:443/llm/_search [status:200 request:0.032s]
+
+
+[1m> Entering new RetrievalQA chain...[0m
+
+
+[1m> Entering new StuffDocumentsChain chain...[0m
+
+
+[1m> Entering new LLMChain chain...[0m
+Prompt after formatting:
+[32;1m[1;3mUse the following pieces of context to answer the question at the end. If you don't know the answer, just say that you don't know, don't try to make up an answer. don't include harmful content
+
+        손흥민 (https://int.soccerway.com/players/-/103043/) - Soccerway.com (영어)
+(영어) 손흥민 (https://web.archive.org/web/20200419143018/https://static.fifa.com/fifa-tournam
+ents/players-coaches/people=307849/index.html) - 국제 축구 연맹 (경기 기록)
+(영어) 손흥민 (http://stats.the-afc.com/player/28669/) – 아시아 축구 연맹 (대회 기록)
+(영어) 손흥민 (https://www.olympedia.org/athletes/134950) - Olympedia
+(영어) 손흥민 (https://web.archive.org/web/20171101000000/http://www.sports-reference.com/
+olympics/athletes/so/son-heung-min-1.html) - Sports Reference
+(영어) 손흥민 (http://www.tottenhamhotspur.com/first-team-squad/heung-min-son/) - 토트넘 홋스
+퍼 FC
+원본 주소 "https://ko.wikipedia.org/w/index.php?title=손흥민&oldid=36522766"
+
+
+손흥민 (https://int.soccerway.com/players/-/103043/) - Soccerway.com (영어)
+(영어) 손흥민 (https://web.archive.org/web/20200419143018/https://static.fifa.com/fifa-tournam
+ents/players-coaches/people=307849/index.html) - 국제 축구 연맹 (경기 기록)
+(영어) 손흥민 (http://stats.the-afc.com/player/28669/) – 아시아 축구 연맹 (대회 기록)
+(영어) 손흥민 (https://www.olympedia.org/athletes/134950) - Olympedia
+(영어) 손흥민 (https://web.archive.org/web/20171101000000/http://www.sports-reference.com/
+olympics/athletes/so/son-heung-min-1.html) - Sports Reference
+(영어) 손흥민 (http://www.tottenhamhotspur.com/first-team-squad/heung-min-son/) - 토트넘 홋스
+퍼 FC
+원본 주소 "https://ko.wikipedia.org/w/index.php?title=손흥민&oldid=36522766"
+
+
+104. House, Future Publishing Limited Quay; Ambury, The; Engl, Bath BA1 1UA All rights
+reserved; number 2008885, Wales company registration (2019년 12월 3일). “Ranked! The 10
+best forwards in the world” (https://web.archive.org/web/20191207195309/https://www.fourfo
+urtwo.com/features/best-forwards-in-the-world-lionel-messi-mohamed-salah-raheem-sterling-
+kylian-mbappe). 《FourFourTwo》. Future. 2019년 12월 7일에 원본 문서 (https://www.fourfour
+two.com/features/best-forwards-in-the-world-lionel-messi-mohamed-salah-raheem-sterling-k
+ylian-mbappe)에서 보존된 문서. 2019년 12월 7일에 확인함.
+105. “Poll: Who is the League's best ever Asian player?” (https://web.archive.org/web/201906280
+02810/https://www.premierleague.com/news/1254968). 《premierleague.com》. 2019년 6월
+28일에 원본 문서 (https://www.premierleague.com/news/1254968)에서 보존된 문서. 2020년 9
+월 20일에 확인함.
+106. “Best of Asia : Asia's all-time greatest XI” (https://web.archive.org/web/20200921231111/http
+s://soccergator.io/best-of-asia-asias-all-time-greatest-xi/). 《soccergator.io》. 2020년 2월 26
+일. 2020년 9월 21일에 원본 문서 (https://soccergator.io/best-of-asia-asias-all-time-greatest-xi)
+에서 보존된 문서. 2020년 9월 20일에 확인함.
+ 위키미디어 공용에 손흥민 (https://commons.wikimedia.org/wiki/Category:Son_Heung-min?
+uselang=ko) 관련 미디어 분류가 있습니다.
+손흥민 (https://www.instagram.com/hm_son7/) - 인스타그램
+손흥민 (https://www.facebook.com/HeungMinSonOfficial) - 페이스북
+손흥민 (https://twitter.com/Sonny7) - 트위터
+손흥민 (https://www.kfa.or.kr/archive/player_record.php?search_val=손흥민) 국가대표팀 기록
+– 대한축구협회
+손흥민 (https://web.archive.org/web/1/http://www.fifa.com/worldfootball/statisticsandrecords/pl
+ayers/player=488666/index.html) - FIFA (영어)
+손흥민 (https://web.archive.org/web/1/http://www.fifa.com/worldfootball/statisticsandrecords/pl
+ayers/player=307849/index.html) - FIFA (영어)
+손흥민 (https://www.uefa.com/uefachampionsleague/clubs/players/250043463/) - UEFA (영
+어)
+손흥민 (https://global.espn.com/football/player/_/id/149945) - ESPN FC (영어)
+손흥민 (https://www.footballdatabase.eu/en/player/details/118783) - FootballDatabase.eu (영
+어)
+손흥민 (https://www.fussballdaten.de/person/sonheungmin/) - Fussballdaten.de (독일어)
+손흥민 (https://www.lequipe.fr/Football/FootballFicheJoueur37596.html) - L'Équipe (프랑스어)
+손흥민 (https://www.national-football-teams.com/player/41148.html) - National-Football-
+Teams.com (영어)
+손흥민 (https://www.soccerbase.com/players/player.sd?player_id=57526) - Soccerbase.com
+(player) (영어)
+외부 링크
+
+
+104. House, Future Publishing Limited Quay; Ambury, The; Engl, Bath BA1 1UA All rights
+reserved; number 2008885, Wales company registration (2019년 12월 3일). “Ranked! The 10
+best forwards in the world” (https://web.archive.org/web/20191207195309/https://www.fourfo
+urtwo.com/features/best-forwards-in-the-world-lionel-messi-mohamed-salah-raheem-sterling-
+kylian-mbappe). 《FourFourTwo》. Future. 2019년 12월 7일에 원본 문서 (https://www.fourfour
+two.com/features/best-forwards-in-the-world-lionel-messi-mohamed-salah-raheem-sterling-k
+ylian-mbappe)에서 보존된 문서. 2019년 12월 7일에 확인함.
+105. “Poll: Who is the League's best ever Asian player?” (https://web.archive.org/web/201906280
+02810/https://www.premierleague.com/news/1254968). 《premierleague.com》. 2019년 6월
+28일에 원본 문서 (https://www.premierleague.com/news/1254968)에서 보존된 문서. 2020년 9
+월 20일에 확인함.
+106. “Best of Asia : Asia's all-time greatest XI” (https://web.archive.org/web/20200921231111/http
+s://soccergator.io/best-of-asia-asias-all-time-greatest-xi/). 《soccergator.io》. 2020년 2월 26
+일. 2020년 9월 21일에 원본 문서 (https://soccergator.io/best-of-asia-asias-all-time-greatest-xi)
+에서 보존된 문서. 2020년 9월 20일에 확인함.
+ 위키미디어 공용에 손흥민 (https://commons.wikimedia.org/wiki/Category:Son_Heung-min?
+uselang=ko) 관련 미디어 분류가 있습니다.
+손흥민 (https://www.instagram.com/hm_son7/) - 인스타그램
+손흥민 (https://www.facebook.com/HeungMinSonOfficial) - 페이스북
+손흥민 (https://twitter.com/Sonny7) - 트위터
+손흥민 (https://www.kfa.or.kr/archive/player_record.php?search_val=손흥민) 국가대표팀 기록
+– 대한축구협회
+손흥민 (https://web.archive.org/web/1/http://www.fifa.com/worldfootball/statisticsandrecords/pl
+ayers/player=488666/index.html) - FIFA (영어)
+손흥민 (https://web.archive.org/web/1/http://www.fifa.com/worldfootball/statisticsandrecords/pl
+ayers/player=307849/index.html) - FIFA (영어)
+손흥민 (https://www.uefa.com/uefachampionsleague/clubs/players/250043463/) - UEFA (영
+어)
+손흥민 (https://global.espn.com/football/player/_/id/149945) - ESPN FC (영어)
+손흥민 (https://www.footballdatabase.eu/en/player/details/118783) - FootballDatabase.eu (영
+어)
+손흥민 (https://www.fussballdaten.de/person/sonheungmin/) - Fussballdaten.de (독일어)
+손흥민 (https://www.lequipe.fr/Football/FootballFicheJoueur37596.html) - L'Équipe (프랑스어)
+손흥민 (https://www.national-football-teams.com/player/41148.html) - National-Football-
+Teams.com (영어)
+손흥민 (https://www.soccerbase.com/players/player.sd?player_id=57526) - Soccerbase.com
+(player) (영어)
+외부 링크
+
+
+        Question: 흥민
+        Answer:[0m
+
+[1m> Finished chain.[0m
+
+[1m> Finished chain.[0m
+
+[1m> Finished chain.[0m
+
+
+[1m> Entering new RetrievalQA chain...[0m
+
+
+[1m> Entering new StuffDocumentsChain chain...[0m
+
+
+[1m> Entering new LLMChain chain...[0m
+Prompt after formatting:
+[32;1m[1;3mUse the following pieces of context to answer the question at the end. If you don't know the answer, just say that you don't know, don't try to make up an answer. don't include harmful content
+
+        손흥민은 2018년 아시안 게임에서 금메달을 거두었고 2018년에 병역 혜택이 확정되었다.[77]
+'그는 단순히 프리미어리그에서 뛰는 선수가 아니다"라며 "프리미어리그를 이끄는 선수이
+다' - 거스 히딩크 (2016년 10월 4일)[78]
+대한민국의 정치인 손원일(孫元⼀) 국방부 장관과 같은 본관이다.[79] 2015년에 손흥민이 조선족이
+라는 황당한 루머가 돌자 손흥민은 “나는 손원일 장관님과 같은 본관인 밀양 손씨다”라고 언급한 적
+이 있다.
+2020년 기준 재산은 한화 약 230억 원으로 세계 축구 선수 중에서 재산 순위 톱 25를 기록했다. 국
+내 축구선수 중에서는 박지성을 이어서 2위이다.[80] 2023년 기준 재산은 한화 약 657억 원으로 국
+내 체육인 중에서는 1위 부호다.[81] 2023년 기준 한화 약 672억 원의 재산을 보유한 박덕흠 국회의
+원과 재산이 비슷하다.
+손웅정의 아들이다. 2대째 축구 선수로 활동 중이다. 이러한 영향으로 운동 신경을 물려받았다는게
+중론이다.
+지지자가 많은 만큼 악플러도 많다. 악플이 많지만 비난에 크게 신경쓰지 않는다.[82]
+어릴 때부터 자동차에 관심이 많았다. 현재는 아우디 R8 쿠페, 마세라티 르반떼, 랜드로버 레인지
+로버, 페라리 458 이탈리아 등의 슈퍼카를 즐겨 타는 것으로 알려졌다. 특히, 페라리는 빨간색이 시
+그니처 색상이지만 토트넘 홋스퍼의 라이벌 팀인 아스널의 유니폼 색상이 빨간색 이기 때문에 빨간
+색 페라리 대신 검은색 페라리를 타는 것으로 유명하다.
+손흥민은 2008년 당시 FC 서울 유스팀이었던 동북고등학교 축구부 일원으로 FC 서울 홈경기시 서
+울월드컵경기장에서 볼보이를 하였으며[83] 특히 이청용 선수의 플레이를 보며 프로선수의 꿈을 키
+웠다.[84][85][86]
+토트넘 홋스퍼의 팬들은 손흥민의 응원가로 ‘Nice One Sonny’를 부른다.
+손흥민은 골을 놓은 후 그 순간을 기억하고 담고 싶다는 이유로 손으로 카메라 포즈를 하는 일명 찰
+칵 셀러브레이션을 한다.
+손흥민은 경기를 위해 필드에 들어갈 때마다 오른쪽 발로 사이드 라인을 밟은 상태에서 왼쪽 발을
+딛지 않고 점프하여 오른발로 필드를 먼저 밟는 루틴이 있다. 그리고 필드에 들어간 후 전력질주 후
+점프하는 루틴도 있다.
+2021년 7월 5일 한국조폐공사에서 손흥민 기념메달을 출시했다.[87]
+2021년 7월 6일 한국관광공사 한국관광 명예홍보대사의 위촉되었다.[88]
+평가
+기타
+
+
+손흥민은 2018년 아시안 게임에서 금메달을 거두었고 2018년에 병역 혜택이 확정되었다.[77]
+'그는 단순히 프리미어리그에서 뛰는 선수가 아니다"라며 "프리미어리그를 이끄는 선수이
+다' - 거스 히딩크 (2016년 10월 4일)[78]
+대한민국의 정치인 손원일(孫元⼀) 국방부 장관과 같은 본관이다.[79] 2015년에 손흥민이 조선족이
+라는 황당한 루머가 돌자 손흥민은 “나는 손원일 장관님과 같은 본관인 밀양 손씨다”라고 언급한 적
+이 있다.
+2020년 기준 재산은 한화 약 230억 원으로 세계 축구 선수 중에서 재산 순위 톱 25를 기록했다. 국
+내 축구선수 중에서는 박지성을 이어서 2위이다.[80] 2023년 기준 재산은 한화 약 657억 원으로 국
+내 체육인 중에서는 1위 부호다.[81] 2023년 기준 한화 약 672억 원의 재산을 보유한 박덕흠 국회의
+원과 재산이 비슷하다.
+손웅정의 아들이다. 2대째 축구 선수로 활동 중이다. 이러한 영향으로 운동 신경을 물려받았다는게
+중론이다.
+지지자가 많은 만큼 악플러도 많다. 악플이 많지만 비난에 크게 신경쓰지 않는다.[82]
+어릴 때부터 자동차에 관심이 많았다. 현재는 아우디 R8 쿠페, 마세라티 르반떼, 랜드로버 레인지
+로버, 페라리 458 이탈리아 등의 슈퍼카를 즐겨 타는 것으로 알려졌다. 특히, 페라리는 빨간색이 시
+그니처 색상이지만 토트넘 홋스퍼의 라이벌 팀인 아스널의 유니폼 색상이 빨간색 이기 때문에 빨간
+색 페라리 대신 검은색 페라리를 타는 것으로 유명하다.
+손흥민은 2008년 당시 FC 서울 유스팀이었던 동북고등학교 축구부 일원으로 FC 서울 홈경기시 서
+울월드컵경기장에서 볼보이를 하였으며[83] 특히 이청용 선수의 플레이를 보며 프로선수의 꿈을 키
+웠다.[84][85][86]
+토트넘 홋스퍼의 팬들은 손흥민의 응원가로 ‘Nice One Sonny’를 부른다.
+손흥민은 골을 놓은 후 그 순간을 기억하고 담고 싶다는 이유로 손으로 카메라 포즈를 하는 일명 찰
+칵 셀러브레이션을 한다.
+손흥민은 경기를 위해 필드에 들어갈 때마다 오른쪽 발로 사이드 라인을 밟은 상태에서 왼쪽 발을
+딛지 않고 점프하여 오른발로 필드를 먼저 밟는 루틴이 있다. 그리고 필드에 들어간 후 전력질주 후
+점프하는 루틴도 있다.
+2021년 7월 5일 한국조폐공사에서 손흥민 기념메달을 출시했다.[87]
+2021년 7월 6일 한국관광공사 한국관광 명예홍보대사의 위촉되었다.[88]
+평가
+기타
+
+
+2024년 NTX의 손호준이 같은 밀양 손씨임을 언급하며 2022년 FIFA 월드컵에 출전한 손흥민을 응
+원했다.[89] 손흥민 측에서는 반응하지 않았다.
+손흥민은 과거 가수 방민아, 유소영과 교제했으며, 현재는 싱글이다.[90]
+손흥민은 코로나19 범유행 기간에 전국적으로 모든 축구 활동이 중단되자 그 기간 동안 한국에서 병역
+의 의무를 마쳤다. 아시안게임 금메달로 병역이 면제됐지만 면제 여부와 상관없이 기초군사훈련을 받아
+야 했기 때문이다. 그는 2020년 4월~5월 제주도에서 열린 대한민국 해병대에서 기초 훈련을 마쳤으며
+157명의 훈련생 중 상위 5위에 들었다.[91][92]
+그는 또한 게임 리그 오브 레전드의 팬으로도 알려져 있다.[93] FIFA 게임도 즐겨한다.
+2019년에는 손흥민은 고향인 강원도 고성군에 엄청난 피해를 남긴 화재로 인해 생긴 피해자들에게 약
+10만 파운드를 기부했다.[94] 2020년에는 한국의 COVID-19 범유행로 인한 피해 등을 돕기 위해
+£65,000를 기부했다.[95]
+손흥민은 아버지, 형과 함께 고향 춘천에 손축구아카데미를 열었다.[96]
+2022년에는 패션 브랜드 NOS7을 론칭하였다.
+[97] 손흥민은 포워드 전 지역에서[6] 뛸 수 있는 매우 다재다능힌 선수이다. 그는 과거 “어디에서 뛰든 상
+관없다. 가장 중요한 것은 내가 경기에 뛰고 있다는 것이다. 나는 세컨드 스트라이커나 또는 그 밑에서도
+뛸 수 있다. 감독님이 시키는 대로 하겠다. 선호하는 포지션은 따로 없다. 나는 언제 어디서나 throttle에
+있을 것이다." 라고 이야기 했었다.[98][99]
+손흥민은 양발 능력, 폭발적인 페이스, 위치 감각, 움직임, 정밀한 컨트롤, 역습에서 특히 효과적인 마무
+리 능력으로 유명하다.[100] 뿐만 아니라, 그는 사심 없는 활동량과 수비 공헌으로 동료들과 언론으로부
+터 찬사를 받았고, 스스로 골을 넣는 것 외에도 동료를 도와줄 수 있는 능력을 지니고 있다.[99][101]
+또한 감아차기 능력이 매우 우수하며 필드 위 특정 스팟에서 왼발, 오른발 할 것 없이 감아차기로 골을
+많이 넣기 때문에 팬들 사이에서 일명 ‘손흥민 존’ 이라고 불리우는 스팟이 있을 정도이다.
+최근 몇 년 동안, 특히 토트넘에서 많은 성공을 거둔 후, 그는 세계 최고의 선수 중 한 명으로 여겨져 왔
+으며 종종 역사상 가장 위대한 아시아 축구 선수로 불리고 있다.[102][103][104][105][106]
+1. “Squads for 2016/17 Premier League confirmed” (https://web.archive.org/web/201707281743
+40/https://www.premierleague.com/news/84136). Premier League. 2016년 9월 1일. 2017년 7
+월 28일에 원본 문서 (https://www.premierleague.com/news/84136)에서 보존된 문서. 2016년 9
+월 15일에 확인함.
+개인 생활
+플레이 스타일
+각주
+
+
+2024년 NTX의 손호준이 같은 밀양 손씨임을 언급하며 2022년 FIFA 월드컵에 출전한 손흥민을 응
+원했다.[89] 손흥민 측에서는 반응하지 않았다.
+손흥민은 과거 가수 방민아, 유소영과 교제했으며, 현재는 싱글이다.[90]
+손흥민은 코로나19 범유행 기간에 전국적으로 모든 축구 활동이 중단되자 그 기간 동안 한국에서 병역
+의 의무를 마쳤다. 아시안게임 금메달로 병역이 면제됐지만 면제 여부와 상관없이 기초군사훈련을 받아
+야 했기 때문이다. 그는 2020년 4월~5월 제주도에서 열린 대한민국 해병대에서 기초 훈련을 마쳤으며
+157명의 훈련생 중 상위 5위에 들었다.[91][92]
+그는 또한 게임 리그 오브 레전드의 팬으로도 알려져 있다.[93] FIFA 게임도 즐겨한다.
+2019년에는 손흥민은 고향인 강원도 고성군에 엄청난 피해를 남긴 화재로 인해 생긴 피해자들에게 약
+10만 파운드를 기부했다.[94] 2020년에는 한국의 COVID-19 범유행로 인한 피해 등을 돕기 위해
+£65,000를 기부했다.[95]
+손흥민은 아버지, 형과 함께 고향 춘천에 손축구아카데미를 열었다.[96]
+2022년에는 패션 브랜드 NOS7을 론칭하였다.
+[97] 손흥민은 포워드 전 지역에서[6] 뛸 수 있는 매우 다재다능힌 선수이다. 그는 과거 “어디에서 뛰든 상
+관없다. 가장 중요한 것은 내가 경기에 뛰고 있다는 것이다. 나는 세컨드 스트라이커나 또는 그 밑에서도
+뛸 수 있다. 감독님이 시키는 대로 하겠다. 선호하는 포지션은 따로 없다. 나는 언제 어디서나 throttle에
+있을 것이다." 라고 이야기 했었다.[98][99]
+손흥민은 양발 능력, 폭발적인 페이스, 위치 감각, 움직임, 정밀한 컨트롤, 역습에서 특히 효과적인 마무
+리 능력으로 유명하다.[100] 뿐만 아니라, 그는 사심 없는 활동량과 수비 공헌으로 동료들과 언론으로부
+터 찬사를 받았고, 스스로 골을 넣는 것 외에도 동료를 도와줄 수 있는 능력을 지니고 있다.[99][101]
+또한 감아차기 능력이 매우 우수하며 필드 위 특정 스팟에서 왼발, 오른발 할 것 없이 감아차기로 골을
+많이 넣기 때문에 팬들 사이에서 일명 ‘손흥민 존’ 이라고 불리우는 스팟이 있을 정도이다.
+최근 몇 년 동안, 특히 토트넘에서 많은 성공을 거둔 후, 그는 세계 최고의 선수 중 한 명으로 여겨져 왔
+으며 종종 역사상 가장 위대한 아시아 축구 선수로 불리고 있다.[102][103][104][105][106]
+1. “Squads for 2016/17 Premier League confirmed” (https://web.archive.org/web/201707281743
+40/https://www.premierleague.com/news/84136). Premier League. 2016년 9월 1일. 2017년 7
+월 28일에 원본 문서 (https://www.premierleague.com/news/84136)에서 보존된 문서. 2016년 9
+월 15일에 확인함.
+개인 생활
+플레이 스타일
+각주
+
+
+        Question: 손흥민은 누구니? 그리고 아버지는 누구니?
+        Answer:[0m2024-03-14 13:26:39,756 - botocore.credentials - INFO - Found credentials from IAM Role: chiholee-ec2-role
+2024-03-14 13:26:39,848 - root - INFO - Starting the chain with KNN similarity using OpenSearch, Bedrock FM anthropic.claude-3-sonnet-20240229-v1:0, and Bedrock embeddings with amazon.titan-embed-text-v1
+2024-03-14 13:26:41,140 - opensearch - INFO - POST https://vpc-test-aponilxfo5qn2nfe6mitxf2rxu.ap-northeast-2.es.amazonaws.com:443/llm/_search [status:200 request:0.430s]
+
+
+[1m> Finished chain.[0m
+
+[1m> Finished chain.[0m
+
+[1m> Finished chain.[0m
+
+
+[1m> Entering new RetrievalQA chain...[0m
+
+
+[1m> Entering new StuffDocumentsChain chain...[0m
+
+
+[1m> Entering new LLMChain chain...[0m
+Prompt after formatting:
+[32;1m[1;3mUse the following pieces of context to answer the question at the end. If you don't know the answer, just say that you don't know, don't try to make up an answer. don't include harmful content
+
+        손흥민은 2018년 아시안 게임에서 금메달을 거두었고 2018년에 병역 혜택이 확정되었다.[77]
+'그는 단순히 프리미어리그에서 뛰는 선수가 아니다"라며 "프리미어리그를 이끄는 선수이
+다' - 거스 히딩크 (2016년 10월 4일)[78]
+대한민국의 정치인 손원일(孫元⼀) 국방부 장관과 같은 본관이다.[79] 2015년에 손흥민이 조선족이
+라는 황당한 루머가 돌자 손흥민은 “나는 손원일 장관님과 같은 본관인 밀양 손씨다”라고 언급한 적
+이 있다.
+2020년 기준 재산은 한화 약 230억 원으로 세계 축구 선수 중에서 재산 순위 톱 25를 기록했다. 국
+내 축구선수 중에서는 박지성을 이어서 2위이다.[80] 2023년 기준 재산은 한화 약 657억 원으로 국
+내 체육인 중에서는 1위 부호다.[81] 2023년 기준 한화 약 672억 원의 재산을 보유한 박덕흠 국회의
+원과 재산이 비슷하다.
+손웅정의 아들이다. 2대째 축구 선수로 활동 중이다. 이러한 영향으로 운동 신경을 물려받았다는게
+중론이다.
+지지자가 많은 만큼 악플러도 많다. 악플이 많지만 비난에 크게 신경쓰지 않는다.[82]
+어릴 때부터 자동차에 관심이 많았다. 현재는 아우디 R8 쿠페, 마세라티 르반떼, 랜드로버 레인지
+로버, 페라리 458 이탈리아 등의 슈퍼카를 즐겨 타는 것으로 알려졌다. 특히, 페라리는 빨간색이 시
+그니처 색상이지만 토트넘 홋스퍼의 라이벌 팀인 아스널의 유니폼 색상이 빨간색 이기 때문에 빨간
+색 페라리 대신 검은색 페라리를 타는 것으로 유명하다.
+손흥민은 2008년 당시 FC 서울 유스팀이었던 동북고등학교 축구부 일원으로 FC 서울 홈경기시 서
+울월드컵경기장에서 볼보이를 하였으며[83] 특히 이청용 선수의 플레이를 보며 프로선수의 꿈을 키
+웠다.[84][85][86]
+토트넘 홋스퍼의 팬들은 손흥민의 응원가로 ‘Nice One Sonny’를 부른다.
+손흥민은 골을 놓은 후 그 순간을 기억하고 담고 싶다는 이유로 손으로 카메라 포즈를 하는 일명 찰
+칵 셀러브레이션을 한다.
+손흥민은 경기를 위해 필드에 들어갈 때마다 오른쪽 발로 사이드 라인을 밟은 상태에서 왼쪽 발을
+딛지 않고 점프하여 오른발로 필드를 먼저 밟는 루틴이 있다. 그리고 필드에 들어간 후 전력질주 후
+점프하는 루틴도 있다.
+2021년 7월 5일 한국조폐공사에서 손흥민 기념메달을 출시했다.[87]
+2021년 7월 6일 한국관광공사 한국관광 명예홍보대사의 위촉되었다.[88]
+평가
+기타
+
+
+손흥민은 2018년 아시안 게임에서 금메달을 거두었고 2018년에 병역 혜택이 확정되었다.[77]
+'그는 단순히 프리미어리그에서 뛰는 선수가 아니다"라며 "프리미어리그를 이끄는 선수이
+다' - 거스 히딩크 (2016년 10월 4일)[78]
+대한민국의 정치인 손원일(孫元⼀) 국방부 장관과 같은 본관이다.[79] 2015년에 손흥민이 조선족이
+라는 황당한 루머가 돌자 손흥민은 “나는 손원일 장관님과 같은 본관인 밀양 손씨다”라고 언급한 적
+이 있다.
+2020년 기준 재산은 한화 약 230억 원으로 세계 축구 선수 중에서 재산 순위 톱 25를 기록했다. 국
+내 축구선수 중에서는 박지성을 이어서 2위이다.[80] 2023년 기준 재산은 한화 약 657억 원으로 국
+내 체육인 중에서는 1위 부호다.[81] 2023년 기준 한화 약 672억 원의 재산을 보유한 박덕흠 국회의
+원과 재산이 비슷하다.
+손웅정의 아들이다. 2대째 축구 선수로 활동 중이다. 이러한 영향으로 운동 신경을 물려받았다는게
+중론이다.
+지지자가 많은 만큼 악플러도 많다. 악플이 많지만 비난에 크게 신경쓰지 않는다.[82]
+어릴 때부터 자동차에 관심이 많았다. 현재는 아우디 R8 쿠페, 마세라티 르반떼, 랜드로버 레인지
+로버, 페라리 458 이탈리아 등의 슈퍼카를 즐겨 타는 것으로 알려졌다. 특히, 페라리는 빨간색이 시
+그니처 색상이지만 토트넘 홋스퍼의 라이벌 팀인 아스널의 유니폼 색상이 빨간색 이기 때문에 빨간
+색 페라리 대신 검은색 페라리를 타는 것으로 유명하다.
+손흥민은 2008년 당시 FC 서울 유스팀이었던 동북고등학교 축구부 일원으로 FC 서울 홈경기시 서
+울월드컵경기장에서 볼보이를 하였으며[83] 특히 이청용 선수의 플레이를 보며 프로선수의 꿈을 키
+웠다.[84][85][86]
+토트넘 홋스퍼의 팬들은 손흥민의 응원가로 ‘Nice One Sonny’를 부른다.
+손흥민은 골을 놓은 후 그 순간을 기억하고 담고 싶다는 이유로 손으로 카메라 포즈를 하는 일명 찰
+칵 셀러브레이션을 한다.
+손흥민은 경기를 위해 필드에 들어갈 때마다 오른쪽 발로 사이드 라인을 밟은 상태에서 왼쪽 발을
+딛지 않고 점프하여 오른발로 필드를 먼저 밟는 루틴이 있다. 그리고 필드에 들어간 후 전력질주 후
+점프하는 루틴도 있다.
+2021년 7월 5일 한국조폐공사에서 손흥민 기념메달을 출시했다.[87]
+2021년 7월 6일 한국관광공사 한국관광 명예홍보대사의 위촉되었다.[88]
+평가
+기타
+
+
+2024년 NTX의 손호준이 같은 밀양 손씨임을 언급하며 2022년 FIFA 월드컵에 출전한 손흥민을 응
+원했다.[89] 손흥민 측에서는 반응하지 않았다.
+손흥민은 과거 가수 방민아, 유소영과 교제했으며, 현재는 싱글이다.[90]
+손흥민은 코로나19 범유행 기간에 전국적으로 모든 축구 활동이 중단되자 그 기간 동안 한국에서 병역
+의 의무를 마쳤다. 아시안게임 금메달로 병역이 면제됐지만 면제 여부와 상관없이 기초군사훈련을 받아
+야 했기 때문이다. 그는 2020년 4월~5월 제주도에서 열린 대한민국 해병대에서 기초 훈련을 마쳤으며
+157명의 훈련생 중 상위 5위에 들었다.[91][92]
+그는 또한 게임 리그 오브 레전드의 팬으로도 알려져 있다.[93] FIFA 게임도 즐겨한다.
+2019년에는 손흥민은 고향인 강원도 고성군에 엄청난 피해를 남긴 화재로 인해 생긴 피해자들에게 약
+10만 파운드를 기부했다.[94] 2020년에는 한국의 COVID-19 범유행로 인한 피해 등을 돕기 위해
+£65,000를 기부했다.[95]
+손흥민은 아버지, 형과 함께 고향 춘천에 손축구아카데미를 열었다.[96]
+2022년에는 패션 브랜드 NOS7을 론칭하였다.
+[97] 손흥민은 포워드 전 지역에서[6] 뛸 수 있는 매우 다재다능힌 선수이다. 그는 과거 “어디에서 뛰든 상
+관없다. 가장 중요한 것은 내가 경기에 뛰고 있다는 것이다. 나는 세컨드 스트라이커나 또는 그 밑에서도
+뛸 수 있다. 감독님이 시키는 대로 하겠다. 선호하는 포지션은 따로 없다. 나는 언제 어디서나 throttle에
+있을 것이다." 라고 이야기 했었다.[98][99]
+손흥민은 양발 능력, 폭발적인 페이스, 위치 감각, 움직임, 정밀한 컨트롤, 역습에서 특히 효과적인 마무
+리 능력으로 유명하다.[100] 뿐만 아니라, 그는 사심 없는 활동량과 수비 공헌으로 동료들과 언론으로부
+터 찬사를 받았고, 스스로 골을 넣는 것 외에도 동료를 도와줄 수 있는 능력을 지니고 있다.[99][101]
+또한 감아차기 능력이 매우 우수하며 필드 위 특정 스팟에서 왼발, 오른발 할 것 없이 감아차기로 골을
+많이 넣기 때문에 팬들 사이에서 일명 ‘손흥민 존’ 이라고 불리우는 스팟이 있을 정도이다.
+최근 몇 년 동안, 특히 토트넘에서 많은 성공을 거둔 후, 그는 세계 최고의 선수 중 한 명으로 여겨져 왔
+으며 종종 역사상 가장 위대한 아시아 축구 선수로 불리고 있다.[102][103][104][105][106]
+1. “Squads for 2016/17 Premier League confirmed” (https://web.archive.org/web/201707281743
+40/https://www.premierleague.com/news/84136). Premier League. 2016년 9월 1일. 2017년 7
+월 28일에 원본 문서 (https://www.premierleague.com/news/84136)에서 보존된 문서. 2016년 9
+월 15일에 확인함.
+개인 생활
+플레이 스타일
+각주
+
+
+2024년 NTX의 손호준이 같은 밀양 손씨임을 언급하며 2022년 FIFA 월드컵에 출전한 손흥민을 응
+원했다.[89] 손흥민 측에서는 반응하지 않았다.
+손흥민은 과거 가수 방민아, 유소영과 교제했으며, 현재는 싱글이다.[90]
+손흥민은 코로나19 범유행 기간에 전국적으로 모든 축구 활동이 중단되자 그 기간 동안 한국에서 병역
+의 의무를 마쳤다. 아시안게임 금메달로 병역이 면제됐지만 면제 여부와 상관없이 기초군사훈련을 받아
+야 했기 때문이다. 그는 2020년 4월~5월 제주도에서 열린 대한민국 해병대에서 기초 훈련을 마쳤으며
+157명의 훈련생 중 상위 5위에 들었다.[91][92]
+그는 또한 게임 리그 오브 레전드의 팬으로도 알려져 있다.[93] FIFA 게임도 즐겨한다.
+2019년에는 손흥민은 고향인 강원도 고성군에 엄청난 피해를 남긴 화재로 인해 생긴 피해자들에게 약
+10만 파운드를 기부했다.[94] 2020년에는 한국의 COVID-19 범유행로 인한 피해 등을 돕기 위해
+£65,000를 기부했다.[95]
+손흥민은 아버지, 형과 함께 고향 춘천에 손축구아카데미를 열었다.[96]
+2022년에는 패션 브랜드 NOS7을 론칭하였다.
+[97] 손흥민은 포워드 전 지역에서[6] 뛸 수 있는 매우 다재다능힌 선수이다. 그는 과거 “어디에서 뛰든 상
+관없다. 가장 중요한 것은 내가 경기에 뛰고 있다는 것이다. 나는 세컨드 스트라이커나 또는 그 밑에서도
+뛸 수 있다. 감독님이 시키는 대로 하겠다. 선호하는 포지션은 따로 없다. 나는 언제 어디서나 throttle에
+있을 것이다." 라고 이야기 했었다.[98][99]
+손흥민은 양발 능력, 폭발적인 페이스, 위치 감각, 움직임, 정밀한 컨트롤, 역습에서 특히 효과적인 마무
+리 능력으로 유명하다.[100] 뿐만 아니라, 그는 사심 없는 활동량과 수비 공헌으로 동료들과 언론으로부
+터 찬사를 받았고, 스스로 골을 넣는 것 외에도 동료를 도와줄 수 있는 능력을 지니고 있다.[99][101]
+또한 감아차기 능력이 매우 우수하며 필드 위 특정 스팟에서 왼발, 오른발 할 것 없이 감아차기로 골을
+많이 넣기 때문에 팬들 사이에서 일명 ‘손흥민 존’ 이라고 불리우는 스팟이 있을 정도이다.
+최근 몇 년 동안, 특히 토트넘에서 많은 성공을 거둔 후, 그는 세계 최고의 선수 중 한 명으로 여겨져 왔
+으며 종종 역사상 가장 위대한 아시아 축구 선수로 불리고 있다.[102][103][104][105][106]
+1. “Squads for 2016/17 Premier League confirmed” (https://web.archive.org/web/201707281743
+40/https://www.premierleague.com/news/84136). Premier League. 2016년 9월 1일. 2017년 7
+월 28일에 원본 문서 (https://www.premierleague.com/news/84136)에서 보존된 문서. 2016년 9
+월 15일에 확인함.
+개인 생활
+플레이 스타일
+각주
+
+
+        Question: 손흥민은 누구니?
+        Answer:[0m
