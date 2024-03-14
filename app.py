@@ -68,15 +68,14 @@ def create_opensearch_vector_search_client(index_name, opensearch_username, open
     return docsearch
 
 def create_bedrock_llm(bedrock_client, model_version_id):
-    """
     # claude-2 이하
-    bedrock_llm = Bedrock(
-        model_id=model_version_id, 
-        client=bedrock_client,
-        model_kwargs={'temperature': 0}
-        )
-    bedrock_llm = BedrockChat(model_id=model_version_id, model_kwargs={'temperature': 0}, streaming=True)
-    """
+    # bedrock_llm = Bedrock(
+    #     model_id=model_version_id, 
+    #     client=bedrock_client,
+    #     model_kwargs={'temperature': 0}
+    #     )
+    # bedrock_llm = BedrockChat(model_id=model_version_id, model_kwargs={'temperature': 0}, streaming=True)
+
     bedrock_llm = BedrockChat(model_id=model_version_id, model_kwargs={'temperature': 0})
     return bedrock_llm
 
