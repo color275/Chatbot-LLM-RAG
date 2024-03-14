@@ -1,4 +1,4 @@
-## Resource
+## Preparation in advance
 - OpenSearch
 - Bedrock
 - IAM
