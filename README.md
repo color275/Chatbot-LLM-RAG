@@ -3,7 +3,7 @@
 - Bedrock
 - IAM
 
-## Env
+## Env File
 create .env
 ```bash
 OPENSEARCH_USERNAME=xxx
@@ -11,7 +11,7 @@ OPENSEARCH_PASSWORD=xxx
 OPENSEARCH_ENDPOINT=search-xxx-xxxx.ap-northeast-2.es.amazonaws.com
 ```
 
-
+## Execution
 ```bash
 python3.10 -m virtualenv venv
 source ./venv/bin/activate
