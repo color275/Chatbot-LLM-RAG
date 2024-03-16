@@ -3,6 +3,8 @@ import fitz
 import logging
 import boto3
 import json
+import os
+from dotenv import load_dotenv
 from datetime import datetime
 from langchain_community.chat_models import BedrockChat
 from langchain_community.embeddings import BedrockEmbeddings
@@ -20,11 +22,12 @@ INIT_MESSAGE = {"role": "assistant", "content": """안녕하세요. 저는 <i><b
                                                    <br>현재 <font color='#32CD32;'><b>손흥민</b></font>과 <font color='#32CD32;'><b>AWS EC2</b></font>에 대해 학습되어 있고 
                                                    왼쪽 섹션에서 <font color='red'><b>PDF 업로드</b></font>를 통해 추가 학습을 할 수 있습니다. <br>무엇을 도와드릴까요?"""}
 ################################################################################
-opensearch_username = 'admin'
-opensearch_password = 'Admin12#$'
-# opensearch_endpoint = 'vpc-xxxx-xxxxxxx.ap-northeast-2.es.amazonaws.com'
-opensearch_endpoint = 'vpc-test-aponilxfo5qn2nfe6mitxf2rxu.ap-northeast-2.es.amazonaws.com'
-index_name = 'llm'
+
+load_dotenv()
+opensearch_username = os.getenv('OPENSEARCH_USERNAME')
+opensearch_password = os.getenv('OPENSEARCH_PASSWORD')
+opensearch_endpoint = os.getenv('OPENSEARCH_ENDPOINT')
+index_name = 'index_chatbot'
 bedrock_region = 'us-west-2'
 stop_record_count = 100
 record_stop_yn = False
@@ -57,7 +60,7 @@ def create_langchain_vector_embedding_using_bedrock(bedrock_client, bedrock_embe
         model_id=bedrock_embedding_model_id)
     return bedrock_embeddings_client    
 
-def create_opensearch_vector_search_client(index_name, opensearch_username, opensearch_password, bedrock_embeddings_client, opensearch_endpoint, _is_aoss=False):
+def create_opensearch_vector_search_client(bedrock_embeddings_client, _is_aoss=False):
     docsearch = OpenSearchVectorSearch(
         index_name=index_name,
         embedding_function=bedrock_embeddings_client,
@@ -67,7 +70,7 @@ def create_opensearch_vector_search_client(index_name, opensearch_username, open
     )
     return docsearch
 
-def create_bedrock_llm(bedrock_client, model_version_id):
+def create_bedrock_llm():
     # claude-2 이하
     # bedrock_llm = Bedrock(
     #     model_id=model_version_id, 
@@ -76,14 +79,14 @@ def create_bedrock_llm(bedrock_client, model_version_id):
     #     )
     # bedrock_llm = BedrockChat(model_id=model_version_id, model_kwargs={'temperature': 0}, streaming=True)
 
-    bedrock_llm = BedrockChat(model_id=model_version_id, model_kwargs={'temperature': 0})
+    bedrock_llm = BedrockChat(model_id=bedrock_model_id, model_kwargs={'temperature': 0})
     return bedrock_llm
 
 def get_bedrock_client():
     bedrock_client = boto3.client("bedrock-runtime", region_name=bedrock_region)
     return bedrock_client
 
-def create_vector_embedding_with_bedrock(text, name, bedrock_client):
+def create_vector_embedding_with_bedrock(text, bedrock_client):
     payload = {"inputText": f"{text}"}
     body = json.dumps(payload)
     modelId = "amazon.titan-embed-text-v1"
@@ -96,18 +99,42 @@ def create_vector_embedding_with_bedrock(text, name, bedrock_client):
     response_body = json.loads(response.get("body").read())
 
     embedding = response_body.get("embedding")
-    return {"_index": name, "text": text, "vector_field": embedding}
+    return {"_index": index_name, "text": text, "vector_field": embedding}
 
 def extract_sentences_from_pdf(opensearch_client, pdf_file, progress_bar, progress_text):    
     try :
         logging.info(f"Checking if index {index_name} exists in OpenSearch cluster")
         
-        exists = opensearch_client.indices.exists(index=index_name)
+        exists = opensearch_client.indices.exists(index=index_name)               
 
         if not exists:
-            success = opensearch_client.create_index(opensearch_client, index_name)
+            body = {
+                'settings': {
+                    'index': {
+                        'number_of_shards': 3,
+                        'number_of_replicas': 2,
+                        "knn": True,
+                        "knn.space_type": "cosinesimil"
+                    }
+                }
+            }
+            success = opensearch_client.indices.create(index_name, body=body)
             if success:
-                success = opensearch_client.create_index_mapping(opensearch_client, index_name)
+                body = {
+                    "properties": {
+                        "vector_field": {
+                            "type": "knn_vector",
+                            "dimension": 1536
+                        },
+                        "text": {
+                            "type": "keyword"
+                        }
+                    }
+                }
+                success = opensearch_client.indices.put_mapping(
+                    index=index_name,
+                    body=body
+                )
 
         doc = fitz.open(stream=pdf_file.read(), filetype="pdf")    
         all_records = []
@@ -137,7 +164,7 @@ def extract_sentences_from_pdf(opensearch_client, pdf_file, progress_bar, progre
                 success, failed = bulk(opensearch_client, all_json_records)
                 break
             
-            records_with_embedding = create_vector_embedding_with_bedrock(record, index_name, bedrock_client)
+            records_with_embedding = create_vector_embedding_with_bedrock(record, bedrock_client)
             all_json_records.append(records_with_embedding)
             
             processed_records += 1
@@ -161,9 +188,12 @@ def extract_sentences_from_pdf(opensearch_client, pdf_file, progress_bar, progre
 def find_answer_in_sentences(question):
     try :        
         bedrock_client = get_bedrock_client()
-        bedrock_llm = create_bedrock_llm(bedrock_client, bedrock_model_id)
+        bedrock_llm = create_bedrock_llm()
+        
         bedrock_embeddings_client = create_langchain_vector_embedding_using_bedrock(bedrock_client, bedrock_embedding_model_id)
-        opensearch_vector_search_client = create_opensearch_vector_search_client(index_name, opensearch_username, opensearch_password, bedrock_embeddings_client, opensearch_endpoint)
+        
+        opensearch_vector_search_client = create_opensearch_vector_search_client(bedrock_embeddings_client)
+        
         prompt_template = """Use the following pieces of context to answer the question at the end. If you don't know the answer, just say that you don't know, don't try to make up an answer. don't include harmful content
 
         {context}
@@ -174,6 +204,7 @@ def find_answer_in_sentences(question):
             template=prompt_template, input_variables=["context", "question"]
         )
         logging.info(f"Starting the chain with KNN similarity using OpenSearch, Bedrock FM {bedrock_model_id}, and Bedrock embeddings with {bedrock_embedding_model_id}")
+        
         qa = RetrievalQA.from_chain_type(llm=bedrock_llm, 
                                         chain_type="stuff", 
                                         retriever=opensearch_vector_search_client.as_retriever(),
@@ -181,7 +212,9 @@ def find_answer_in_sentences(question):
                                         chain_type_kwargs={"prompt": PROMPT, "verbose": True},
                                         verbose=True)
         
+        
         response = qa(question, return_only_outputs=False)
+        
         source_documents = response.get('source_documents')
         # logging.info(f"The answer from Bedrock {bedrock_model_id} is: {response.get('result')}")
         return f"{response.get('result')}"
