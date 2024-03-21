@@ -30,16 +30,18 @@ INIT_MESSAGE = {"role": "assistant",
                 "content": """
 안녕하세요. 저는 <font color='red'><b>Amazon Bedrock과 Claude3</b></font>를 활용해서 여러분들이 찾고 싶은 데이터를 대신 찾아줄 <i><b>[데이터가 궁금해]<i><b> 입니다. 
 <br>아래와 같이 질문해보세요.
-- <font color='#32CD32;'><b>오늘 주문실적을 알려줘</b></font><br>
-- <font color='#32CD32;'><b>오늘 가장 적게 팔린 상품을 알려줘</b></font><br>
 - <font color='#32CD32;'><b>어제 판매된 상품 중 주문 금액 TOP 5 를 알려줘</b></font><br>
+- <font color='#32CD32;'><b>지난 일주일간 주문 실적을 일 별로 알려줘</b></font><br>
+- <font color='#32CD32;'><b>오늘 총 주문금액이 가장 적은 상품을 알려줘</b></font><br>
+- <font color='#32CD32;'><b>오늘 주문실적을 알려줘</b></font><br>
 ---
 무엇을 도와드릴까요?"""}
 
 CONTEXT_DATA = """
         참고. 안녕이라고 질문하면 인사와 간단한 소개만 해줘.
-        참고. 데이터를 알려달라고 할 때만 질문을 확인할 수 있는 SQL을 만들어서 제공해줘.
         참고. 질문에 대해 이해한 내용을 앞에 작성해줘.
+        참고. 데이터를 알려달라고 할 때만 질문을 확인할 수 있는 SQL을 만들어서 제공해줘.
+        참고. 제공된 정보가 없다면 너가 SQL을 만들어줘
         참고. SQL은 제공한 테이블만 사용해서 만들어줘
         참고. SQL은 markdown의 코드 sql 태그 안에 넣어줘.
         참고. markdown 코드 sql 태그 안에는 하나의 sql 만 넣어줘.
