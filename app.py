@@ -30,28 +30,15 @@ INIT_MESSAGE = {"role": "assistant",
                 "content": """
 안녕하세요. 저는 <font color='red'><b>Amazon Bedrock과 Claude3</b></font>를 활용해서 여러분들이 찾고 싶은 데이터를 대신 찾아줄 <i><b>[데이터가 궁금해]<i><b> 입니다. 
 <br>아래와 같이 질문해보세요.
-- <font color='#32CD32;'><b>어제 판매된 상품 중 주문 금액 TOP 5 를 알려줘</b></font><br>
+- <font color='#32CD32;'><b>어제 판매된 상품 기준으로 주문 금액 TOP 5 를 알려줘</b></font><br>
 - <font color='#32CD32;'><b>지난 일주일간 주문 실적을 일 별로 알려줘</b></font><br>
 - <font color='#32CD32;'><b>오늘 총 주문금액이 가장 적은 상품을 알려줘</b></font><br>
-- <font color='#32CD32;'><b>오늘 주문실적을 알려줘</b></font><br>
+- <font color='#32CD32;'><b>지난 3일간 총주문수량을 알려줘</b></font><br>
 ---
 무엇을 도와드릴까요?"""}
 
-CONTEXT_DATA = """
-        참고. 안녕이라고 질문하면 인사와 간단한 소개만 해줘.
-        참고. 질문에 대해 이해한 내용을 앞에 작성해줘.
-        참고. 데이터를 알려달라고 할 때만 질문을 확인할 수 있는 SQL을 만들어서 제공해줘.
-        참고. 제공된 정보가 없다면 너가 SQL을 만들어줘
-        참고. SQL은 제공한 테이블만 사용해서 만들어줘
-        참고. SQL은 markdown의 코드 sql 태그 안에 넣어줘.
-        참고. markdown 코드 sql 태그 안에는 하나의 sql 만 넣어줘.
-        참고. SELECT 절의 컬럼 alias는 한글로 만들어줘.
-        참고. where 절에서 컬럼을 형변환을 위해 가공하지 말아줘. 예를 들어 order_dt 를 DATE(order_dt)로 변환하지 말아라.
-        참고. where 컬럼A = 상수B 일 떄 컬럼A와 상수B의 데이터타입이 다르다면 상수B를 형변환해서 데이터타입을 동일하게 맞춰줘.예를 들어 order_dt = CURDATE() 일 경우 order_dt = date_format(curdate(), '%Y-%m-%d') 로 사용해줘
-        참고. where 에서 동일한 데이터타입으로 비교를 할 수 있게 적절한 형변환을 해줘.
-        참고. SQL 생성 시 최대 10개의 레코드만 표시되도록 Limit 10을 SQL에 포함시켜줘. 그리고 Limit 10을 임의로 추가했다고 초록색 글자로 안내해줘.
-        참고. SQL 생성 시 별도의 정렬이 필요없다면 [alias].last_update_time desc 을 정렬 조건으로 추가해줘. [alias] 에는 적절한 테이블의 alias를 명시해줘.
-        """
+
+
 ################################################################################
 
 load_dotenv()
@@ -242,6 +229,7 @@ def extract_sentences_from_pdf(opensearch_client, pdf_file, progress_bar, progre
 
 def find_answer_in_sentences(question):
     try:
+        # question = question + " 정보가 없다는 이야기는 하지 말고, 제공된 정보를 바탕으로 너가 SQL을 만들어줘."
         question = question
         bedrock_client = get_bedrock_client()
         bedrock_llm = create_bedrock_llm()
@@ -253,8 +241,22 @@ def find_answer_in_sentences(question):
             bedrock_embeddings_client)
         
         
+        # Use the following pieces of context to answer the question at the end. If you don't know the answer, just say that you don't know, don't try to make up an answer. don't include harmful content        
+        # SQL 생성 시 최대 10개의 레코드만 표시되도록 SQL의 가장 하단에 Limit 10을 SQL에 포함시켜줘. 그리고 Limit 10을 임의로 추가했다고 초록색 글자로 안내해줘.
         prompt_template = """
-        Use the following pieces of context to answer the question at the end. If you don't know the answer, just say that you don't know, don't try to make up an answer. don't include harmful content        
+        Use the following pieces of context to answer the question at the end.
+        인사를 하면 별도 데이터나 SQL 제공없이 간단한 소개만 해줘.
+        질문에 대해 설명을 앞부분에 작성해줘.
+        데이터를 알려달라고 할 때만 질문을 확인할 수 있는 SQL을 만들어서 제공해줘.
+        SQL은 제공한 테이블만 사용해서 만들어줘
+        SQL은 markdown의 코드 sql 태그 안에 넣어줘.
+        markdown 코드 sql 태그 안에는 하나의 sql 만 넣어줘.
+        SELECT 절에서 컬럼 AS 뒤의 alias는 한글로 작성해줘.
+        where 절에서 컬럼을 형변환을 위해 가공하지 말아줘. 예를 들어 order_dt 를 DATE(order_dt)로 변환하지 말아라.
+        where 컬럼A = 상수B 일 떄 컬럼A와 상수B의 데이터타입이 다르다면 상수B를 형변환해서 데이터타입을 동일하게 맞춰줘.예를 들어 order_dt = CURDATE() 일 경우 order_dt = date_format(curdate(), '%Y-%m-%d') 로 사용해줘
+        where 에서 동일한 데이터타입으로 비교를 할 수 있게 적절한 형변환을 해줘.
+        SQL의 FROM 절에서 테이블의 alias 는 반드시 적어줘.
+        SQL 생성 시 별도의 정렬이 필요없다면 [alias].last_update_time desc 을 정렬 조건으로 추가해줘. [alias] 에는 적절한 테이블의 alias를 명시해줘.
         {context}
 
         Question: {question}
@@ -264,10 +266,10 @@ def find_answer_in_sentences(question):
             template=prompt_template, input_variables=["context", "question"]
         )
 
-        prompt = prompt_template.format(
-            context=CONTEXT_DATA, question=question)
+        # prompt = prompt_template.format(
+        #     context=CONTEXT_DATA, question=question)
         
-        print("# prompt : ", prompt)
+        # print("# prompt : ", prompt)
 
 
         logging.info(
@@ -281,7 +283,9 @@ def find_answer_in_sentences(question):
                                              "prompt": prompt_template, "verbose": True},
                                          verbose=True)
 
-        response = qa({"context": CONTEXT_DATA, "query": question},
+        # response = qa({"context": CONTEXT_DATA, "query": question},
+        #               return_only_outputs=False)
+        response = qa(question,
                       return_only_outputs=False)
 
         source_documents = response.get('source_documents')
