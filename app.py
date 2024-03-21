@@ -32,8 +32,8 @@ INIT_MESSAGE = {"role": "assistant",
 <br>아래와 같이 질문해보세요.
 - <font color='#32CD32;'><b>어제 판매된 상품 기준으로 주문 금액 TOP 5 를 알려줘</b></font><br>
 - <font color='#32CD32;'><b>지난 일주일간 주문 실적을 일 별로 알려줘</b></font><br>
+- <font color='#32CD32;'><b>최근 5분 동안 총주문금액과 총주문수량을 분 단위로 알려줘</b></font><br>
 - <font color='#32CD32;'><b>오늘 총 주문금액이 가장 적은 상품을 알려줘</b></font><br>
-- <font color='#32CD32;'><b>지난 3일간 총주문수량을 알려줘</b></font><br>
 ---
 무엇을 도와드릴까요?"""}
 
