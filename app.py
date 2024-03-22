@@ -420,25 +420,28 @@ def main():
             with st.spinner("Thinking..."):
                 answer = find_answer_in_sentences(question)
 
-                sql_queries = re.findall(r'```sql(.*?)```', answer, re.DOTALL)
-                st.markdown(answer, unsafe_allow_html=True)
+                try :
+                    sql_queries = re.findall(r'```sql(.*?)```', answer, re.DOTALL)
+                    st.markdown(answer, unsafe_allow_html=True)
 
-                if len(sql_queries) > 0:
-                    # st.markdown(sql_queries[0], unsafe_allow_html=True)
-                    sql = sql_queries[0]
-                    df = execute_query_and_return_df(sql)
-                    st.write(':bulb: **쿼리 실행 결과**', df)
+                    if len(sql_queries) > 0:
+                        # st.markdown(sql_queries[0], unsafe_allow_html=True)
+                        sql = sql_queries[0]
+                        df = execute_query_and_return_df(sql)
+                        st.write(':bulb: **쿼리 실행 결과**', df)
 
-                    message = {"role": "assistant",
-                               "type": "data",
-                               "content": [answer, df]}
+                        message = {"role": "assistant",
+                                "type": "data",
+                                "content": [answer, df]}
 
-                else:
-                    message = {"role": "assistant",
-                               "type": "text",
-                               "content": answer}
+                    else:
+                        message = {"role": "assistant",
+                                "type": "text",
+                                "content": answer}
 
-                st.session_state.messages.append(message)
+                    st.session_state.messages.append(message)
+                except Exception as e:
+                    pass
 
 
 if __name__ == "__main__":
